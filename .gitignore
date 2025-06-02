@@ -1,5 +1,6 @@
 *
 !/.gitignore
 !/*.bat
+!/jpegoptim.exe
 !/pngquant.exe
 !/readme.md
