@@ -4,8 +4,8 @@ CHCP 65001
 SET path=%~dp0
 
 SET "name=Сжать"
-SET "type=pngfile"
-SET "position=Top"
+SET "type=*"
+SET "position=Bottom"
 SET command=%path%file.bat ""%%1""
 
 reg add "HKCR\%type%\shell\%name%" /f
