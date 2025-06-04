@@ -1,13 +1,14 @@
 @ECHO OFF
 CHCP 65001
 
-SET path=%~dp0
-
+SET "path=%~dp0"
 SET "name=Сжать"
 SET "position=Bottom"
 SET command=%path%file.bat ""%%1""
 
 CALL :add_context_menu_item_for_extension ".png"
+CALL :add_context_menu_item_for_extension ".jpg"
+CALL :add_context_menu_item_for_extension ".jpeg"
 
 EXIT /B %ERRORLEVEL%
 
