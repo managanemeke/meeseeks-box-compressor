@@ -1,0 +1,15 @@
+@ECHO OFF
+CHCP 65001
+
+SET path=%~dp0
+
+SET "name=Сжать"
+SET "type=pngfile"
+SET "position=Top"
+SET command=%path%file.bat ""%%1""
+
+reg add "HKCR\%type%\shell\%name%" /f
+reg add "HKCR\%type%\shell\%name%" /f /v MUIVerb /t REG_SZ /d %name%
+reg add "HKCR\%type%\shell\%name%" /f /v Position /t REG_SZ /d %position%
+reg add "HKCR\%type%\shell\%name%\command" /f
+reg add "HKCR\%type%\shell\%name%\command" /f /ve /d "%command%"
