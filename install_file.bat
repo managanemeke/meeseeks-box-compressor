@@ -6,13 +6,13 @@ SET "name=Сжать"
 SET "position=Bottom"
 SET command=%path%file.bat ""%%1""
 
-CALL :add_context_menu_item_for_extension ".png"
-CALL :add_context_menu_item_for_extension ".jpg"
-CALL :add_context_menu_item_for_extension ".jpeg"
+CALL :add_context_menu_item_for_type ".png"
+CALL :add_context_menu_item_for_type ".jpg"
+CALL :add_context_menu_item_for_type ".jpeg"
 
 EXIT /B %ERRORLEVEL%
 
-:add_context_menu_item_for_extension
+:add_context_menu_item_for_type
 SET "type=%~1"
 reg add "HKCR\SystemFileAssociations\%type%\shell\%name%" /f
 reg add "HKCR\SystemFileAssociations\%type%\shell\%name%" /f /v MUIVerb /t REG_SZ /d %name%

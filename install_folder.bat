@@ -6,11 +6,11 @@ SET "name=Сжать"
 SET "position=Bottom"
 SET command=%path%folder.bat ""%%1""
 
-CALL :add_context_menu_item_for_extension "Directory.Image"
+CALL :add_context_menu_item_for_type "Directory.Image"
 
 EXIT /B %ERRORLEVEL%
 
-:add_context_menu_item_for_extension
+:add_context_menu_item_for_type
 SET "type=%~1"
 reg add "HKCR\SystemFileAssociations\%type%\shell\%name%" /f
 reg add "HKCR\SystemFileAssociations\%type%\shell\%name%" /f /v MUIVerb /t REG_SZ /d %name%
