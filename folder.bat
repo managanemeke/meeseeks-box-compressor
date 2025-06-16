@@ -1,4 +1,5 @@
 @ECHO OFF
+CHCP 65001
 SETLOCAL EnableDelayedExpansion
 
 SET path=%~dp0
