@@ -29,6 +29,9 @@ CALL :get_extension_without_dot "%input%" extension
 IF "%extension%"=="png" CALL :compress_png_file "%input%", "%output%"
 IF "%extension%"=="jpg" CALL :compress_jpg_file "%input%", "%output%"
 IF "%extension%"=="jpeg" CALL :compress_jpg_file "%input%", "%output%"
+IF "%extension%"=="PNG" CALL :compress_png_file "%input%", "%output%"
+IF "%extension%"=="JPG" CALL :compress_jpg_file "%input%", "%output%"
+IF "%extension%"=="JPEG" CALL :compress_jpg_file "%input%", "%output%"
 EXIT /B 0
 
 :compress_png_file
