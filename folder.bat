@@ -13,11 +13,11 @@ SET "output=%input%_%~2"
 IF NOT EXIST "%output%\" (
     MKDIR "%output%"
 )
-FOR %%i IN (%input%\*.*) DO (
+FOR %%i IN ("%input%\*.*") DO (
     SET "input_file=%%i"
     SET "file_name=%%~nxi"
     SET "output_file=%output%\!file_name!"
-    CALL :compress_file "%%i", !output_file!
+    CALL :compress_file "%%i", "!output_file!"
 )
 EXIT /B 0
 
